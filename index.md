@@ -7,7 +7,16 @@ title: Plete documentation
 
 A vanilla js autocomplete component that supports remote filtering.
 
-It enhances an existing `<input type="text" />` element and provides callbacks when busy, ready and selections are made.
+It enhances an existing `<input type="text"/>` element and provides callbacks when busy, ready and selections are made.
+
+## Features
+
+* Good WAI-ARIA support
+* Supports multiple input types: keyboard, mouse, touch
+* Supports local and remove filtering (async function as datasource)
+* Custom rendering of elements
+* 100% test coverage
+* BSD-3 License
 
 ## Installation
 
