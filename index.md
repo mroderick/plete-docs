@@ -13,7 +13,7 @@ It enhances an existing `<input type="text"/>` element and provides callbacks wh
 
 * Good WAI-ARIA support
 * Supports multiple input types: keyboard, mouse, touch
-* Supports local and remove filtering (async function as datasource)
+* Supports local and remote filtering (async function as datasource)
 * Custom rendering of elements
 * 100% test coverage
 * BSD-3 License
