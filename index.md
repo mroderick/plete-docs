@@ -376,7 +376,6 @@ When the suggestions are visible, the DOM looks like this (with additional ARIA 
 </plete>
 ```
 
-
 ### `autocomplete="off"`
 
 In order to avoid collisions with browser built-in autocomplete, it is recommended to use `autocomplete="off"` on the `<input>` element that is used with `plete`.
@@ -385,5 +384,4 @@ In order to avoid collisions with browser built-in autocomplete, it is recommend
 <input type="text" name="country" autocomplete="off" />
 ```
 
-See: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete
-
+See: [MDN article about autocomplete attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete)
