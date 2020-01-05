@@ -4,7 +4,7 @@ This repository contains the documentation for https://github.com/mroderick/plet
 
 ## Run the site locally
 
-```sh
+```bash
 npm ci
 npm start
 
