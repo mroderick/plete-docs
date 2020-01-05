@@ -199,7 +199,7 @@ const dataSrc = ["Denmark", "Germany", "Spain", "Sweden", "United Kingdom"];
     <fieldset>
       <label>
         Country
-        <input type="text" name="country" autocomplete="off" autofocus="autofocus" />
+        <input type="text" name="country" autocomplete="off" />
       </label>
     </fieldset>
   </form>
@@ -238,7 +238,7 @@ const dataSrc = [
     <fieldset>
       <label>
         Country
-        <input type="text" name="country" autocomplete="off" autofocus="autofocus" />
+        <input type="text" name="country" autocomplete="off" />
       </label>
     </fieldset>
   </form>
@@ -289,7 +289,7 @@ const dataSrc = async function filterCountries(query) {
     <fieldset>
       <label>
         Country
-        <input type="text" name="country" autocomplete="off" autofocus="autofocus" />
+        <input type="text" name="country" autocomplete="off" />
       </label>
     </fieldset>
   </form>
@@ -326,7 +326,7 @@ const dataSrc = async function filterCountries(query) {
     <fieldset>
       <label>
         Country
-        <input type="text" name="country" autocomplete="off" autofocus="autofocus" />
+        <input type="text" name="country" autocomplete="off" />
       </label>
     </fieldset>
   </form>
