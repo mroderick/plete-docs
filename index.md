@@ -1,6 +1,6 @@
 ---
 layout: page-layout.njk
-title: Plete documentation
+title: plete
 ---
 
 # `plete`
