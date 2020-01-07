@@ -19,7 +19,7 @@ It enhances an existing `<input type="text"/>` element and provides callbacks wh
 * Custom rendering of elements
 * 100% test coverage
 * BSD-3 License
-* zero dependencies
+* Zero dependencies
 
 ## Installation
 
