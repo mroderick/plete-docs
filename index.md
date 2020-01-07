@@ -23,9 +23,9 @@ It enhances an existing `<input type="text"/>` element and provides callbacks wh
 
 ## Compatibility
 
-This project is aiming for wide compatibility in **modern** and **supported** browsers.
+This project is aiming for wide compatibility in [modern, evergreen browsers](https://www.techopedia.com/definition/31094/evergreen-browser).
 
-This means that **no versions of IE**, or legacy versions of Safari (before 10) are supported.
+Specifically, [`defaults, not safari <= 10, not ie <= 11, not IE_Mob <= 11`](https://browserl.ist/?q=defaults%2C+not+safari+%3C%3D+10%2C+not+ie+%3C%3D+11%2C+not+IE_Mob+%3C%3D+11).
 
 If you need to support legacy browsers in your project, you likely already have a transpiling setup and know how to use polyfills.
 
