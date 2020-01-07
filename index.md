@@ -21,6 +21,14 @@ It enhances an existing `<input type="text"/>` element and provides callbacks wh
 * BSD-3 License
 * Zero dependencies
 
+## Compatibility
+
+This project is aiming for wide compatibility in **modern** and **supported** browsers.
+
+This means that **no versions of IE**, or legacy versions of Safari (before 10) are supported.
+
+If you need to support legacy browsers in your project, you likely already have a transpiling setup and know how to use polyfills.
+
 ## Installation
 
 You can load `plete` straight from jsDelivr or install it locally via `npm`
