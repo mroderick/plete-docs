@@ -36,6 +36,31 @@ title: My Rad Blog
         border: none;
       }
 
+      #big-demo {
+        font-size: 3em;
+        background-color: #ddd;
+        padding: 2em;
+        height: 8em
+      }
+
+      @media screen and (max-width: 480px) {
+        #big-demo {
+          padding: 1em;
+          font-size: 1em;
+        }
+      }
+
+      #big-demo fieldset {
+        padding: 0;
+      }
+
+      #big-demo input[name="country"] {
+        box-sizing: border-box;
+        display: block;
+        margin: 0.2em 0;
+        width: 100%;
+      }
+
     </style>
     <script src="https://cdn.jsdelivr.net/npm/plete@0.2.x/dist/main.js"></script>
   </head>
