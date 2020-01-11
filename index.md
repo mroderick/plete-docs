@@ -11,6 +11,48 @@ A vanilla js autocomplete component that supports remote filtering.
 
 It enhances an existing `<input type="text"/>` element and provides callbacks when busy, ready and selections are made.
 
+## Quick demo
+
+<section id="big-demo">
+  <form>
+    <fieldset>
+      <label>
+        Country<br/>
+        <input type="text" autocomplete="off" name="country" autofocus="autofocus" />
+      </label>
+    </fieldset>
+  </form>
+  <p>
+    You selected: <span class="selectedValue"></span>
+  </p>
+  <script>
+    async function filterCountries(query) {
+      const response = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
+      const result = await response.json();
+      if (!Array.isArray(result)) {
+        return [];
+      }
+      return result.map(function(v) {
+        return {
+          id: v.alpha3Code,
+          label: v.name
+        }
+      });
+    }
+    const plete4 = new Plete({
+      input: document.querySelector("#big-demo input[name='country']"),
+      dataSrc: filterCountries,
+      select: function(id) {
+        document.querySelector("#big-demo .selectedValue").textContent = id;
+      }
+    });
+  </script>
+</section>
+
+There are [more demos below](#demos)
+
+
+
 ## Features
 
 * Good WAI-ARIA support
@@ -204,7 +246,7 @@ render: function renderOption(item) {
 }
 ```
 
-## Demos
+<h2 id="demos">Demos</h2>
 
 ### String values
 
