@@ -11,47 +11,9 @@ A vanilla js autocomplete component that supports remote filtering.
 
 It enhances an existing `<input type="text"/>` element and provides callbacks when busy, ready and selections are made.
 
-## Quick demo
-
-<section id="big-demo">
-  <form>
-    <fieldset>
-      <label>
-        Country<br/>
-        <input type="text" autocomplete="off" name="country" autofocus="autofocus" />
-      </label>
-    </fieldset>
-  </form>
-  <p>
-    You selected: <span class="selectedValue"></span>
-  </p>
-  <script>
-    async function filterCountries(query) {
-      const response = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
-      const result = await response.json();
-      if (!Array.isArray(result)) {
-        return [];
-      }
-      return result.map(function(v) {
-        return {
-          id: v.alpha3Code,
-          label: v.name
-        }
-      });
-    }
-    const plete4 = new Plete({
-      input: document.querySelector("#big-demo input[name='country']"),
-      dataSrc: filterCountries,
-      select: function(id) {
-        document.querySelector("#big-demo .selectedValue").textContent = id;
-      }
-    });
-  </script>
-</section>
+{% include examples/big-demo.html %}
 
 There are [more demos below](#demos)
-
-
 
 ## Features
 
@@ -78,10 +40,10 @@ You can load `plete` straight from jsDelivr or install it locally via `npm`
 ### jsDelivr
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plete@0.2.x/dist/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/plete.css" />
 
 <!-- this loads script with a global Plete constructor, CJS and ESM versions exist in dist/-->
-<script src="https://cdn.jsdelivr.net/npm/plete@0.2.x/dist/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/plete.js"></script>
 ```
 
 ### npm
@@ -256,28 +218,7 @@ The `dataSrc` option can be an array of string values.
 const dataSrc = ["Denmark", "Germany", "Spain", "Sweden", "United Kingdom"];
 ```
 
-<section id="string">
-  <form action=".">
-    <fieldset>
-      <label>
-        Country
-        <input type="text" name="country" autocomplete="off" />
-      </label>
-    </fieldset>
-  </form>
-  <p>
-    You selected: <span class="selectedValue"></span>
-  </p>
-  <script>
-    const plete1 = new Plete({
-      input: document.querySelector("#string input[name='country']"),
-      dataSrc: ["Denmark", "Germany", "Spain", "Sweden", "United Kingdom"],
-      select: function(value) {
-        document.querySelector("#string .selectedValue").textContent = value;
-      }
-    });
-  </script>
-</section>
+{% include examples/string-values.html %}
 
 ### Object values
 
@@ -295,38 +236,7 @@ const dataSrc = [
 ];
 ```
 
-<section id="object">
-  <form action=".">
-    <fieldset>
-      <label>
-        Country
-        <input type="text" name="country" autocomplete="off" />
-      </label>
-    </fieldset>
-  </form>
-  <p>
-    You selected: <span class="selectedValue"></span>
-  </p>
-  <script>
-    const plete2 = new Plete({
-      input: document.querySelector("#object input[name='country']"),
-      dataSrc: [
-            { id: "BEL", label: "Belgium" },
-            { id: "DNK", label: "Denmark" },
-            { id: "GER", label: "Germany" },
-            { id: "MCO", label: "Monaco" },
-            { id: "SRB", label: "Serbia" },
-            { id: "ESP", label: "Spain" },
-            { id: "SWE", label: "Sweden" },
-            { id: "GBR", label: "United Kingdom" },
-            { id: "USA", label: "United States of America" }
-      ],
-      select: function(value) {
-        document.querySelector("#object .selectedValue").textContent = value;
-      }
-    });
-  </script>
-</section>
+{% include examples/object-values.html %}
 
 ### Remote filtering
 
@@ -346,78 +256,13 @@ const dataSrc = async function filterCountries(query) {
 }
 ```
 
-<section id="remote">
-  <form action=".">
-    <fieldset>
-      <label>
-        Country
-        <input type="text" name="country" autocomplete="off" />
-      </label>
-    </fieldset>
-  </form>
-  <p>
-    You selected: <span class="selectedValue"></span>
-  </p>
-  <script>
-    async function filterCountries(query) {
-      const response = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
-      const result = await response.json();
-      if (!Array.isArray(result)) {
-        return [];
-      }
-      return result.map(function(v) {
-        return {
-          id: v.alpha3Code,
-          label: v.name
-        }
-      });
-    }
-    const plete4 = new Plete({
-      input: document.querySelector("#remote input[name='country']"),
-      dataSrc: filterCountries,
-      select: function(id) {
-        document.querySelector("#remote .selectedValue").textContent = id;
-      }
-    });
-  </script>
-</section>
+{% include examples/remote-filtering.html %}
+
 
 ### Custom rendering of options
-<section id="custom">
-  <form action=".">
-    <fieldset>
-      <label>
-        Country
-        <input type="text" name="country" autocomplete="off" />
-      </label>
-    </fieldset>
-  </form>
-  <p>
-    You selected: <span class="selectedValue"></span>
-  </p>
-  <script>
-    const plete3 = new Plete({
-      input: document.querySelector("#custom input[name='country']"),
-      dataSrc: [
-            { id: "BEL", label: "Belgium" },
-            { id: "DNK", label: "Denmark" },
-            { id: "GER", label: "Germany" },
-            { id: "MCO", label: "Monaco" },
-            { id: "SRB", label: "Serbia" },
-            { id: "ESP", label: "Spain" },
-            { id: "SWE", label: "Sweden" },
-            { id: "GBR", label: "United Kingdom" },
-            { id: "USA", label: "United States of America" }
-      ],
-      render: function(item) {
-        return `<b>${item.id}</b> ${item.label}`;
-      },
-      select: function(id) {
-        document.querySelector("#custom .selectedValue").textContent = id;
-      }
-    });
-  </script>
-</section>
+
+{% include examples/custom-rendering.html %}
+
 
 ## Styling
 
