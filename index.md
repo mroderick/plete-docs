@@ -40,10 +40,10 @@ You can load `plete` straight from jsDelivr or install it locally via `npm`
 ### jsDelivr
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/main.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/plete.css" />
 
 <!-- this loads script with a global Plete constructor, CJS and ESM versions exist in dist/-->
-<script src="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/plete@0.3.x/dist/plete.js"></script>
 ```
 
 ### npm
