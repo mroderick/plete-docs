@@ -14,6 +14,9 @@
     async function filterCountries(query) {
       const url = `${window.location.origin}/.netlify/functions/countries?query=${query}`
       const response = await fetch(url);
+      if (!response.ok) {
+        return [];
+      }
       const result = await response.json();
       if (!Array.isArray(result)) {
         return [];
