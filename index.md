@@ -141,6 +141,9 @@ Using an async function as `dataSrc` allows us to do remote filtering and mappin
 ```js
 const dataSrc = async function filterCountries(query) {
   const response = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
+  if (!response.ok) {
+    return [];
+  }
   const result = await response.json();
   if (!Array.isArray(result)) {
     return [];
@@ -243,6 +246,9 @@ const dataSrc = [
 ```js
 const dataSrc = async function filterCountries(query) {
   const response = await fetch(`https://restcountries.eu/rest/v2/name/${query}`);
+  if (!response.ok) {
+    return [];
+  }
   const result = await response.json();
   if (!Array.isArray(result)) {
     return [];
